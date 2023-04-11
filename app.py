@@ -13,8 +13,7 @@ def index():
         val = str(request.args.get('text'))
         data = json.dumps({"sender": "Rasa", "message": val})
         headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-        print(data)
-        res = requests.post('http://localhost:5005/webhooks/rest/webhook')
+        res = requests.post('http://localhost:5005/webhooks/rest/webhook', data=data, headers=headers)
         res = res.json()
         val = res[0]['text']
     return render_template('index.html', val=val)
