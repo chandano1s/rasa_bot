@@ -35,7 +35,7 @@ stories:
   - action: utter_greet
   - intent: grn_query
     entities:
-    - grn_no
+    - grn_reference
   - action: utter_grn_query
   - intent: mood_greet
   - action: utter_happy
@@ -54,5 +54,5 @@ stories:
     - action: utter_site_query
     - intent: vendor_query
       entities:
-      - vendor_name
+      - vendor_code
     - action: utter_vendor_query

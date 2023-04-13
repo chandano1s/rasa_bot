@@ -1,10 +1,10 @@
 version: "3.1"
 
 nlu:
-- regex: purchase_order
+- regex: po_reference
   examples: |
     - \^(PO|po)\/[0-9]{5}$
-- regex: grn_no
+- regex: grn_reference
   examples: |
     - \^(grn|GRN|Grn|gRn|GRn|gRN)\/[0-9]{6}$
 
@@ -102,120 +102,126 @@ nlu:
 
 - intent: grn_query
   examples: |
-    - Get me my status of [grn/000033](grn_no).
-    - Show all in my [grn/000011](grn_no).
-    - [grn/000048](grn_no).
-    - I want to know about [grm/45456](grn_no).
-    - What is the grn of [V-65456](vendor_name) using [Pipes](material_category), [Kerb](material_category).
-    - get all detail of [grn/000323](grn_no).
-    - get all grn whose [approved](status_code).
-    - Send me all [pending](status_code) grn.
-    - I want all grn whose purchase order is [PO/65413](purchase_order).
-    - what is the grn of purchase order [PO/54456](purchase_order).
-    - What is the grn for [PAY/00011](voucher_name).
-    - Get all grn which [V-65454](vendor_name) is created.
-    - show all the grn whose [GRNPAY](voucher_name).
-    - Show all the grn whose requisition [RQN/56454](requisition_name).
-    - fetch all the grn whose [RQN/54564](requisition_name).
-    - get all grn whose [V-68454](vendor_name).
+    - Get me my status of [grn/000033](grn_reference).
+    - Show all in my [grn/000011](grn_reference).
+    - [grn/000048](grn_reference).
+    - I want to know about [grm/45456](grn_reference).
+    - What is the grn of [V-65456](vendor_code) using [Pipes](material_reference), [Kerb](material_reference).
+    - get all detail of [grn/000323](grn_reference).
+    - get all grn whose [approved](status).
+    - Send me all [pending](status) grn.
+    - I want all grn whose purchase order is [PO/65413](po_reference).
+    - what is the grn of purchase order [PO/54456](po_reference).
+    - What is the grn for [PAY/00011](voucher_reference).
+    - Get all grn which [V-65454](vendor_code) is created.
+    - show all the grn whose [GRNPAY](voucher_reference).
+    - Show all the grn whose requisition [RQN/56454](rqn_reference).
+    - fetch all the grn whose [RQN/54564](rqn_reference).
+    - get all grn whose [V-68454](vendor_code).
+    - list of all grn of vendor [HCS-01](vendor_code).
     
 
 - intent: purchase_query
   examples: |
     - get me po of all approved grn.
-    - I want to get purchase order whose status is [closed](status_code).
-    - Get me all purchase order whose status is [rejected](status_code).
-    - show all the report of purchase order [PO/00003](purchase_order).
-    - [PO/12458](purchase_order)
-    - send me details about purchase order [PO/12514](purchase_order).
+    - I want to get purchase order whose status is [closed](status).
+    - Get me all purchase order whose status is [rejected](status).
+    - show all the report of purchase order [PO/00003](po_reference).
+    - [PO/12458](po_reference)
+    - list of all purchase orders of vendor [v-0001](vendor_code).
+    - List out all po of vendor [V-5545](vendor_code).
+    - send me details about purchase order [PO/12514](po_reference).
     - give me all the purchase order of [grn](grn_query).
     - all po of all vendor.
-    - [po/44575](purchase_order)
-    - What is the purchase order for [GRNPAY/00001](voucher_name).
-    - Show all purchase order of [V-45845](vendor_name) and [HCS-01](vendor_name).
-    - what is the purchase order of [PO/12345](purchase_order).
-    - fetch all the purchase order for [PAY/65454](voucher_name).
-    - What is the purchase order for [grn/000042](grn_no).
-    - get all order for [grn/000032](grn_no).
-    - What is all purchase order for [RQN/65451](requisition_name).
-    - What is the po of [V-15445](vendor_name).
+    - [po/44575](po_reference)
+    - What is the purchase order for [GRNPAY/00001](voucher_reference).
+    - Show all purchase order of [V-4584](vendor_code) and [HCS-01](vendor_code).
+    - what is the purchase order of [PO/12345](po_reference).
+    - fetch all the purchase order for [PAY/65454](voucher_reference).
+    - What is the purchase order for [grn/000042](grn_reference).
+    - get all order for [grn/000032](grn_reference).
+    - What is all purchase order for [RQN/65451](rqn_reference).
+    - What is the po of [V-1544](vendor_code).
     - get me all details of [PO/45487](purhase_order).
-    - get me the outstanding of [po/32147](purchase_order)
+    - list of all po of [v-6545](vendor_code).
+    - get me the outstanding of [po/32147](po_reference)
 
 - intent: site_query
   examples: |
-    - Which site is [pending](status_code).
+    - Which site is [pending](status).
     - Site name where pincode is 141008.
-    - which site is [open](status_code).
-    - Send me all site which is [rejected](status_code).
+    - which site is [open](status).
+    - Send me all site which is [rejected](status).
     - send me site of grn/004455
-    - I want to know about [T-01](vendor_name).
-    - get me site name whose purchase order is [po/01454](purchase_order).
+    - I want to know about [T-01](vendor_code).
+    - get me site name whose purchase order is [po/01454](po_reference).
     - all site of vendor in ludhiana.
     - what is the site of [grn/000035](grn_query).
     - What is the site of [grn/000540](grn_query).
-    - Which site is released [PAY/00001](voucher_name).
-    - Tell me site for [V-5124](vendor_name).
-    - what is the site of [grn/312121](grn_no) whose [po/35145](purchase_order) or [PAY/1110](voucher_name) having [V-36251](vendor_name).
-    - fetch all sites for vendor [v-54445](vendor_name)
-    - get all the site of  [P-01](site_name).
-    - What is all the site of [RQN/65455](requisition_name).
+    - Which site is released [PAY/00001](voucher_reference).
+    - Tell me site for [V-5124](vendor_code).
+    - what is the site of [grn/312121](grn_reference) whose [po/35145](po_reference) or [PAY/1110](voucher_reference) having [V-3251](vendor_code).
+    - fetch all sites for vendor [v-5444](vendor_code)
+    - get all the site of  [P-01](site_code).
+    - What is all the site of [RQN/65455](rqn_reference).
 
 - intent: vendor_query
   examples: |
-    - What is the vendor name whose belongs to [PO/54356](purchase_order).
+    - What is the vendor name whose belongs to [PO/54356](po_reference).
     - vendor who is situated in gil road.
-    - vendor whose grn is [grn/088989](grn_no).
+    - vendor whose grn is [grn/088989](grn_reference).
     - I want to know about vendor whose new.
-    - [v-656](vendor_name).
-    - Which vendor are using [Bitumen VG-10](material_category).
-    - What is vendor name whose purchase order is [po/45646](purchase_order).
+    - [v-656](vendor_code).
+    - Which vendor are using [Bitumen VG-10](material_reference).
+    - What is vendor name whose purchase order is [po/45646](po_reference).
     - send me all the vendors who is in the list.
-    - whose all vendor using [Cement, Cement OPC-43, Crusher](material_category).
-    - fetch all the vendor of site [v-545](vendor_name) 
-    - I want to get all vendor of [RQN/00585](requisition_name).
+    - whose all vendor using [Cement, Cement OPC-43, Crusher](material_reference).
+    - fetch all the vendor of site [v-5445](vendor_code) 
+    - I want to get all vendor of [RQN/00585](rqn_reference).
     - What is vendor name which supply us material.
-    - What is the vendor name of [V-654](site_name).
-    - What is the vendor name of [GRNPAY/04467](voucher_name).
-    - what is the vendor name whose code is [V-0087](vendor_name).
-    - Get all vendor whose whose requisition is [RQN/51547](requisition_name).
-    - Send all the vendor name whose requisition is [RQN/56454](requisition_name).
-    - What is the detail of [V-587](vendor_name) having [RQN/
+    - What is the vendor name of [V-654](site_code).
+    - What is the vendor name of [GRNPAY/04467](voucher_reference).
+    - what is the vendor name whose code is [V-0087](vendor_code).
+    - Get all vendor whose whose requisition is [RQN/51547](rqn_reference).
+    - Send all the vendor name whose requisition is [RQN/56454](rqn_reference).
+    - What is the detail of [V-5287](vendor_code) having [RQN/12121](rqn_reference).
+    
 
 - intent: purchase_date
   examples: |
-    - Get me purchase date for [PO/65454](purchase_order).
-    - What is the purchase date for [grn/000124](grn_no).
+    - Get me purchase date for [PO/65454](po_reference).
+    - What is the purchase date for [grn/000124](grn_reference).
     - What is purchase date for all rejected grn.
-    - Get me purchase date of all vendor using [Crusher](material_category).
+    - Get me purchase date of all vendor using [Crusher](material_reference).
     - get me all the pd of cancelled grn.
-    - What is the pd of all [grnpay/02154](voucher_name).
-    - send me purchase date of [po/51512](purchase_order).
-    - send me purchase date for [GRNPAY/00007](voucher_name).
-    - What is the purchase date for [V-0048](vendor_name).
-    - Get all purchase date for [pay/45544](vendor_name).
-    - Show me all the purchase date of [W-561](site_name).
-    - fetch all the purchase date for [w-001](site_name).
-    - view me purchase date for [01S-65](site_name).
-    - I want to fetch date for [W-Test1](site_name).
-    - filter out all purchase date for [W-281A](site_name).
-    - Get the purchase date got [RQN/11214](requisition_name).
-    - Show me the PD for [PAY/51547](voucher_name).
+    - What is the pd of all [grnpay/02154](voucher_reference).
+    - send me purchase date of [po/51512](po_reference).
+    - send me purchase date for [GRNPAY/00007](voucher_reference).
+    - What is the purchase date for [V-0048](vendor_code).
+    - Get all purchase date for [pay/45544](voucher_reference).
+    - Show me all the purchase date of [W-561](site_code).
+    - fetch all the purchase date for [w-001](site_code).
+    - view me purchase date for [01S-65](site_code).
+    - I want to fetch date for [W-Test1](site_code).
+    - filter out all purchase date for [W-281A](site_code).
+    - Get the purchase date got [RQN/11214](rqn_reference).
+    - Show me the PD for [PAY/51547](voucher_reference).
+    - list of all pd for [HCS-01](vendor_code).
 
 - intent: status_query
   examples: |
-    - What is the status of [grn/654540](grn_no).
-    - can you please fetch me all [po/64545](purchase_order).
-    - Get all the status of [GRNPAY/40007](voucher_name).
-    - show me all status of vendor [V-6545](vendor_name).
-    - Fetch all status of goods receive note [grn/000044](grn_no).
-    - I want to status of [W-Test1](site_name).
-    - filter out [pending](status_code) status of [RQN/554554](requisition).
-    - Tell me the status of [W-454B](site_name).
-    - What is the status of [PAY/45455](voucher_name).
+    - What is the status of [grn/654540](grn_reference).
+    - can you please fetch me all [po/64545](po_reference).
+    - Get all the status of [GRNPAY/40007](voucher_reference).
+    - show me all status of vendor [V-6545](vendor_code).
+    - Fetch all status of goods receive note [grn/000044](grn_reference).
+    - I want to status of [W-Test1](site_code).
+    - filter out [pending](status) status of [RQN/554554](requisition).
+    - Tell me the status of [W-454B](site_code).
+    - What is the status of [PAY/45455](voucher_reference).
     - could you please send me all status of [RQN/545641](requisition).
-    - What is the status of [po/12515](purchase_order).
+    - What is the status of [po/12515](po_reference).
     - Tell us status of all.
-    - What is the status of [grn/655655](grn_no) having [RCC Pipes](material_category), [TMT 10MM](material_category).
-    - Status of the [po/87854](purchase_order) having [Tiles](material_category), [Foam](material_category).
-    - What is the status of [PAY/41511](voucher_name) which content [Shuttering](material_category), [Generator](material_category).
+    - What is the status of [grn/655655](grn_reference) having [RCC Pipes](material_reference), [TMT 10MM](material_reference).
+    - Status of the [po/87854](po_reference) having [Tiles](material_reference), [Foam](material_reference).
+    - What is the status of [PAY/41511](voucher_reference) which content [Shuttering](material_reference), [Generator](material_reference).
