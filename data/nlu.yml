@@ -105,10 +105,13 @@ nlu:
     - Get me my status of [grn/000033](grn_reference).
     - Show all in my [grn/000011](grn_reference).
     - [grn/000048](grn_reference).
+    - I'm curious about the grn value for [v-6759](vendor_code). Do you know what it is?
     - I want to know about [grm/45456](grn_reference).
     - What is the grn of [V-65456](vendor_code) using [Pipes](material_reference), [Kerb](material_reference).
     - get all detail of [grn/000323](grn_reference).
     - get all grn whose [approved](status).
+    - Please provide the grn associated with [v-6759](vendor_code).
+    - For [v-6759](vendor_code), what is the corresponding grn?
     - Send me all [pending](status) grn.
     - I want all grn whose purchase order is [PO/65413](po_reference).
     - what is the grn of purchase order [PO/54456](po_reference).
@@ -123,7 +126,7 @@ nlu:
 
 - intent: purchase_query
   examples: |
-    - get me po of all approved grn.
+    - get me po of all [approved](status) grn.
     - I want to get purchase order whose status is [closed](status).
     - Get me all purchase order whose status is [rejected](status).
     - show all the report of purchase order [PO/00003](po_reference).
@@ -152,13 +155,15 @@ nlu:
     - Site name where pincode is 141008.
     - which site is [open](status).
     - Send me all site which is [rejected](status).
-    - send me site of grn/004455
+    - send me site of grn/004455 whose status is [approved](status).
+    - Retrieve the site name for purchase order [po/01454](po_reference).
     - I want to know about [T-01](vendor_code).
     - get me site name whose purchase order is [po/01454](po_reference).
-    - all site of vendor in ludhiana.
+    - What is the site name associated with purchase order [po/01454](po_reference).
+    - all site of vendor in ludhiana whish is [rejected](status).
     - what is the site of [grn/000035](grn_query).
     - What is the site of [grn/000540](grn_query).
-    - Which site is released [PAY/00001](voucher_reference).
+    - Which site is released [PAY/00001](voucher_reference) and [approved](status).
     - Tell me site for [V-5124](vendor_code).
     - what is the site of [grn/312121](grn_reference) whose [po/35145](po_reference) or [PAY/1110](voucher_reference) having [V-3251](vendor_code).
     - fetch all sites for vendor [v-5444](vendor_code)
@@ -212,7 +217,7 @@ nlu:
   examples: |
     - What is the status of [grn/654540](grn_reference).
     - can you please fetch me all [po/64545](po_reference).
-    - Get all the status of [GRNPAY/40007](voucher_reference).
+    - Get all the status of [GRNPAY/40007](voucher_reference) is it [closed](status).
     - show me all status of vendor [V-6545](vendor_code).
     - Fetch all status of goods receive note [grn/000044](grn_reference).
     - I want to status of [W-Test1](site_code).
@@ -221,7 +226,7 @@ nlu:
     - What is the status of [PAY/45455](voucher_reference).
     - could you please send me all status of [RQN/545641](requisition).
     - What is the status of [po/12515](po_reference).
-    - Tell us status of all.
+    - Tell us status of all [closed](status).
     - What is the status of [grn/655655](grn_reference) having [RCC Pipes](material_reference), [TMT 10MM](material_reference).
     - Status of the [po/87854](po_reference) having [Tiles](material_reference), [Foam](material_reference).
     - What is the status of [PAY/41511](voucher_reference) which content [Shuttering](material_reference), [Generator](material_reference).
