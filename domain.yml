@@ -13,6 +13,8 @@ intents:
   - status_query
   - site_query
   - vendor_query
+  - voucher_query
+  - rqn_query
   - purchase_date
 
 

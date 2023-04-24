@@ -110,6 +110,9 @@ nlu:
     - What is the grn of [V-65456](vendor_code) using [Pipes](material_reference), [Kerb](material_reference).
     - get all detail of [grn/000323](grn_reference).
     - get all grn whose [approved](status).
+    - fetch all the grns which is [vouched](status).
+    - please get all the grns for [paid](status).
+    - asking about grn list for [vouched](status).
     - Please provide the grn associated with [v-6759](vendor_code).
     - For [v-6759](vendor_code), what is the corresponding grn?
     - Send me all [pending](status) grn.
@@ -137,6 +140,9 @@ nlu:
     - give me all the purchase order of [grn](grn_query).
     - all po of all vendor.
     - [po/44575](po_reference)
+    - get all the po of [rejected](status).
+    - fetch all the purchase order of po/54541 whose status of [closed](status).
+    - list all the po of [cancelled](status) status.
     - What is the purchase order for [GRNPAY/00001](voucher_reference).
     - Show all purchase order of [V-4584](vendor_code) and [HCS-01](vendor_code).
     - what is the purchase order of [PO/12345](po_reference).
@@ -177,6 +183,7 @@ nlu:
     - vendor whose grn is [grn/088989](grn_reference).
     - I want to know about vendor whose new.
     - [v-656](vendor_code).
+    - Which vendor is [cancelled](status).
     - Which vendor are using [Bitumen VG-10](material_reference).
     - What is vendor name whose purchase order is [po/45646](po_reference).
     - send me all the vendors who is in the list.
@@ -230,3 +237,28 @@ nlu:
     - What is the status of [grn/655655](grn_reference) having [RCC Pipes](material_reference), [TMT 10MM](material_reference).
     - Status of the [po/87854](po_reference) having [Tiles](material_reference), [Foam](material_reference).
     - What is the status of [PAY/41511](voucher_reference) which content [Shuttering](material_reference), [Generator](material_reference).
+
+- intent: voucher_query
+  examples: |
+    - What is the payment voucher of [grn/564517](grn_reference).
+    - What is the pv of [po/45127](po_reference).
+    - show all the payment voucher who is [paid](status).
+    - what all are pv whose status is [draft](status).
+    - get all the payment voucher is [cancelled](status).
+    - get all v_q of [v-4016](vendor_code).
+    - What is the voucher of [PAY/54517](voucher_reference) and [TMT 10MM](material_reference).
+    - what is pay_voucher of [v-4512](vendor_code) and the [draft](status).
+    - Tell us the p_voucher of [RQN/454547](requisition).
+    - get all the p_v of material includes the [Foam](material_reference).
+    
+
+- intent: rqn_query
+  examples: |
+    - what is the rqn of [grn/722467](grn_reference).
+    - Tell me about requisition whose status is [closed](status).
+    - I want to rqn of [po/65142](po_reference).
+    - list out the rqn of [PAY/72175](voucher_reference).
+    - fetch all requisition who belong from [v-6521](vendor_code).
+    - send me all requisition of [w-test1](site_code).
+    - filter out the rqn of which is [request for po](status).
+    - send me all the requisition for status whose [po generated](status).
