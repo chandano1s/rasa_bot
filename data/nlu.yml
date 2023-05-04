@@ -105,11 +105,13 @@ nlu:
     - Get me my status of [grn/000033](grn_reference).
     - Show all in my [grn/000011](grn_reference).
     - [grn/000048](grn_reference).
+    - show me the list of grn against site [w-001](site_code) and vendor [V-7937](vendor_code).
+    - show me the list of grn against po [po/71979](po_reference) and [GRNPAY/01470](voucher_reference).
     - get all [paid](status) grn of site [w-100](site_code)?
     - get all [approved](status) grn of [GRNPAY/00001](voucher_reference).
     - I'm curious about the grn value for [v-6759](vendor_code). Do you know what it is?
     - I want to know about [grm/45456](grn_reference).
-    - What is the grn of [V-65456](vendor_code) using [Pipes](material_reference), [Kerb](material_reference).
+    - What is the grn of [V-65456](vendor_code) using [M-100](material_reference), [M-789](material_reference).
     - get all detail of [grn/000323](grn_reference).
     - get all grn whose [approved](status).
     - fetch all the grns which is [vouched](status).
@@ -123,20 +125,26 @@ nlu:
     - what is the grn of purchase order [PO/54456](po_reference).
     - What is the grn for [PAY/00011](voucher_reference).
     - Get all grn which [V-65454](vendor_code) is created.
+    - show me the list of all [approved](status) grn of site [W-419,421-425](site_code).
     - show all the grn whose [GRNPAY](voucher_reference).
     - Show all the grn whose requisition [RQN/56454](rqn_reference).
     - fetch all the grn whose [RQN/54564](rqn_reference).
     - get all grn whose [V-68454](vendor_code).
     - list of all grn of vendor [HCS-01](vendor_code).
+    - show me the list of grn whose status in [approved](status) of site [W-01S](site_code).
     
 
 - intent: purchase_query
   examples: |
+    - show me the list of po of site [W-001](site_code) whose status is [paid](status)
+    - show me the list of purchase order whose status in [approved](status) of site [W-01S](site_code).
     - get me po of all [approved](status) grn.
     - I want to get purchase order whose status is [closed](status).
     - Get me all purchase order whose status is [rejected](status).
     - show all the report of purchase order [PO/00003](po_reference).
     - [PO/12458](po_reference)
+    - show me the list of po against site [w-001](site_code).
+    - send me the list of po of vendor [V-54514](vendor_code) whose is using [M-066](material_reference).
     - get all [approved](status) PO of [GRNPAY/00001](voucher_reference).
     - get me the list of [pending](status) PO of [T-01](site_code).
     - get me list of [paid](status) PO of site [T-01](site_code).
@@ -145,14 +153,19 @@ nlu:
     - send me details about purchase order [PO/12514](po_reference).
     - give me all the purchase order of [grn](grn_query).
     - all po of all vendor.
+    - show me the list of po against site [w-001](site_code).
+    - show me the list of purchase against vendor [V-5417](vendor_code) and get [Paid](status).
+    - show me the list of all [approved](status) Purchase O of site [W-419,421-425](site_code).
     - [po/44575](po_reference)
     - get all the po of [rejected](status).
+    - Retrieve all purchase orders that have been [approved](status).
     - get all [approved](status) Purchased Order of [GRNPAY/00001](voucher_reference).
     - fetch all the purchase order of po/54541 whose status of [closed](status).
     - list all the po of [cancelled](status) status.
     - What is the purchase order for [GRNPAY/00001](voucher_reference).
     - Show all purchase order of [V-4584](vendor_code) and [HCS-01](vendor_code).
     - what is the purchase order of [PO/12345](po_reference).
+    - Retrieve all purchase orders that have been [open](status).
     - fetch all the purchase order for [PAY/65454](voucher_reference).
     - What is the purchase order for [grn/000042](grn_reference).
     - get all order for [grn/000032](grn_reference).
@@ -168,10 +181,12 @@ nlu:
     - Site name where pincode is 141008.
     - which site is [open](status).
     - Send me all site which is [rejected](status).
+    - show me the list of site against [po/75948](po_reference) and [open](status).
     - get all [approved](status) site of [GRNPAY/00001](voucher_reference).
     - send me site of [grn/004455](grn_reference) whose status is [approved](status).
     - Retrieve the site name for purchase order [po/01454](po_reference).
     - I want to know about [T-01](vendor_code).
+    - Retrieve all site that have been [approved](status) and [pay/84517](voucher_reference).
     - Get me the [paid](status) site of [po/64512](po_reference).
     - I want to list of [Approved](status) site whose po is [po/78514](po_reference).
     - get me site name whose purchase order is [po/01454](po_reference).
@@ -179,11 +194,13 @@ nlu:
     - all site of vendor in ludhiana whish is [rejected](status).
     - what is the site of [grn/000035](grn_reference).
     - What is the site of [grn/000540](grn_reference).
+    - show me the list of site of against [V-78973](vendore_code) and whose [RQN/00054](rqn_reference).
     - Which site is released [PAY/00001](voucher_reference) and [approved](status).
     - Tell me site for [V-5124](vendor_code).
     - what is the site of [grn/312121](grn_reference) whose [po/35145](po_reference) or [PAY/1110](voucher_reference) having [V-3251](vendor_code).
     - fetch all sites for vendor [v-5444](vendor_code)
     - get all the site of  [P-01](site_code).
+    - show me the list of all [approved](status) site of [W-451](site_code)?
     - What is all the site of [RQN/65455](rqn_reference).
 
 - intent: vendor_query
@@ -194,43 +211,24 @@ nlu:
     - get all [approved](status) vendor of [GRNPAY/00001](voucher_reference).
     - I want to know about vendor whose new.
     - [v-656](vendor_code).
+    - Retrieve all vendor name whose 
+    - Show me the list of all [paid](status) Vendors.
     - Which vendor is [cancelled](status).
-    - Which vendor are using [Bitumen VG-10](material_reference).
+    - show me the list of all [cancelled](status) vendor of site [w-982](site_code).
+    - Which vendor are using [M-055](material_reference).
     - What is vendor name whose purchase order is [po/45646](po_reference).
     - send me all the vendors who is in the list.
-    - whose all vendor using [Cement, Cement OPC-43, Crusher](material_reference).
-    - fetch all the vendor of site [v-5445](vendor_code) 
+    - whose all vendor using [M-112](material_reference).
+    - fetch all the vendor of site [v-5445](vendor_code).
+    - Retrieve all vendor whose use [M-077](material_reference).
     - I want to get all vendor of [RQN/00585](rqn_reference).
-    - What is vendor name which supply us material.
+    - What is vendor name which supply us [M-074](material_reference).
     - What is the vendor name of [V-654](site_code).
     - What is the vendor name of [GRNPAY/04467](voucher_reference).
     - what is the vendor name whose code is [V-0087](vendor_code).
     - Get all vendor whose whose requisition is [RQN/51547](rqn_reference).
     - Send all the vendor name whose requisition is [RQN/56454](rqn_reference).
     - What is the detail of [V-5287](vendor_code) having [RQN/12121](rqn_reference).
-    
-
-- intent: purchase_date
-  examples: |
-    - Get me purchase date for [PO/65454](po_reference).
-    - What is the purchase date for [grn/000124](grn_reference).
-    - What is purchase date for all rejected grn.
-    - Get me purchase date of all vendor using [Crusher](material_reference).
-    - get me all the pd of cancelled grn.
-    - What is the pd of all [grnpay/02154](voucher_reference).
-    - send me purchase date of [po/51512](po_reference).
-    - get all [approved](status) purchase date of [GRNPAY/00001](voucher_reference).
-    - send me purchase date for [GRNPAY/00007](voucher_reference).
-    - What is the purchase date for [V-0048](vendor_code).
-    - Get all purchase date for [pay/45544](voucher_reference).
-    - Show me all the purchase date of [W-561](site_code).
-    - fetch all the purchase date for [w-001](site_code).
-    - view me purchase date for [01S-65](site_code).
-    - I want to fetch date for [W-Test1](site_code).
-    - filter out all purchase date for [W-281A](site_code).
-    - Get the purchase date got [RQN/11214](rqn_reference).
-    - Show me the PD for [PAY/51547](voucher_reference).
-    - list of all pd for [HCS-01](vendor_code).
 
 - intent: status_query
   examples: |
@@ -246,9 +244,10 @@ nlu:
     - could you please send me all status of [RQN/545641](requisition).
     - What is the status of [po/12515](po_reference).
     - Tell us status of all [closed](status).
-    - What is the status of [grn/655655](grn_reference) having [RCC Pipes](material_reference), [TMT 10MM](material_reference).
-    - Status of the [po/87854](po_reference) having [Tiles](material_reference), [Foam](material_reference).
-    - What is the status of [PAY/41511](voucher_reference) which content [Shuttering](material_reference), [Generator](material_reference).
+    - What is the status of [grn/655655](grn_reference) having [M-084](material_reference), [M-008](material_reference).
+    - Status of the [po/87854](po_reference) having [M-045](material_reference), [M-023](material_reference).
+    - What is the status of [PAY/41511](voucher_reference) which content [M-075](material_reference), [M-029](material_reference).
+    - show me the status of [grn/544783](grn_reference) and purchase order is [po/88472](po_reference).
 
 - intent: voucher_query
   examples: |
@@ -258,12 +257,17 @@ nlu:
     - what all are pv whose status is [draft](status).
     - get all the payment voucher is [cancelled](status).
     - get all v_q of [v-4016](vendor_code).
-    - What is the voucher of [PAY/54517](voucher_reference) and [TMT 10MM](material_reference).
+    - show me the list of voucher against [W-547](site_code) and get [paid](status).
+    - send me all the voucher for [grn/741272](grn_reference) and whose status is [Paid](status_code).
+    - What is the voucher of [PAY/54517](voucher_reference) and [M-034](material_reference).
     - what is pay_voucher of [v-4512](vendor_code) and the [draft](status).
     - Tell us the p_voucher of [RQN/454547](requisition).
     - Get the list of [approved](status) voucher of [po/45158](po_reference).
-    - get all the p_v of material includes the [Foam](material_reference).
-    
+    - get all the p_v of material includes the [M-039](material_reference).
+    - show me the [closed](status) payment voucher for site [W-765](site_code).
+    - show me the [passed](status) PV for vendor [V-0087](vendor_code).
+    - show me all the [grnpay/54124](voucher_reference) pv for site [P-01](site_code).
+    - send me all the [M-032](material_reference) payment voucher for site [P-05](site_code).
 
 - intent: rqn_query
   examples: |
@@ -276,3 +280,10 @@ nlu:
     - filter out the rqn of which is [request for po](status).
     - send me all the requisition for status whose [po generated](status).
     - get all [approved](status) rqn of [GRNPAY/002454](voucher_reference).
+    - Show me the [cancelled](status) rqn for vendor [hcs-52](vendor_code)?
+    - Show me the [paid](status) requisition for site [w-654](site_code).
+    - send me rqn detail for [grn/425127](grn_reference) which is [pending](status).
+    - I want to get all rqn for [grn/354472](grn_reference) and that is [paid](status).
+    - show me the list of requisition against site [w-051](site_code).
+    - show me the list of rqn against site [w-759](site_code) and [po/44437](po_reference).
+    - Retrieve all rqn for [po/45147](po_reference) and [M-789](material_reference).
